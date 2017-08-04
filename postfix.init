@@ -13,4 +13,9 @@ echo "${NAGIOS_FQDN}" > /etc/mailname
 #postfix runs in a chroot and needs resolv.conf to resolve hostnames
 cp /etc/resolv.conf /var/spool/postfix/etc/resolv.conf
 
+#generate sasl_passwd.db if necessary
+if [ -f /etc/postfix/sasl_passwd ];then
+    postmap /etc/postmap/sasl_passwd
+fi
+
 exec /usr/lib/postfix/sbin/master -d -c /etc/postfix
