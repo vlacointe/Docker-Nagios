@@ -1,5 +1,5 @@
 FROM ubuntu:16.04
-MAINTAINER Jason Rivers <jason@jasonrivers.co.uk>
+MAINTAINER Vincent Lacointe <vlacointe@gmail.com>
 
 ENV NAGIOS_HOME			/opt/nagios
 ENV NAGIOS_USER			nagios
